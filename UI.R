@@ -19,14 +19,16 @@ shinyUI(
     conditionalPanel(
       condition = "input.Distribution =='Normal'",
       textInput("mean", "Please select the mean", 10),
-      textInput("sd", "Please select Standard Deviation")
+      textInput("sd", "Please select Standard Deviation",3)
     ),
     conditionalPanel(
       condition = "input.Distribution == 'Exponential'",
-      textInput("lambda", "Please select Exponential lambda:", 1)
+      textInput("lambda", "Please select Exponential lambda:",1)
       
     )),
     
-    mainPanel("Main Panel")
+    mainPanel(plotOutput("myPlot"))
+    
   )
 )
+
